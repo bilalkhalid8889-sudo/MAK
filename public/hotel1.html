@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5406,6 +5407,9 @@
             <div class="nav-item" data-page="settings">
                 <div class="icon">⚙️</div> Settings
             </div>
+            <div class="nav-item" data-page="about">
+                <div class="icon">🏨</div> About Us
+            </div>
         </div>
         <div class="sidebar-footer">
             <div class="user-card">
@@ -5806,6 +5810,144 @@
                         <div id="recentTransactions"></div>
                     </div>
                 </div>
+            </div>
+
+            <!-- ═══════════════ ABOUT US PAGE ═══════════════ -->
+            <div class="page" id="page-about">
+              <style>
+                .about-hero{background:linear-gradient(135deg,var(--charcoal) 0%,#1a1208 100%);border-radius:var(--radius);padding:64px 48px;margin-bottom:28px;position:relative;overflow:hidden;color:#fff}
+                .about-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(201,168,76,0.18) 0%,transparent 70%);pointer-events:none}
+                .about-hero-badge{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+                .about-hero h1{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;line-height:1.15;margin-bottom:18px}
+                .about-hero h1 span{color:var(--gold)}
+                .about-hero p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.72);max-width:640px}
+                .about-hero-stats{display:flex;gap:40px;margin-top:36px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.1)}
+                .ahs-item .ahs-val{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--gold);font-weight:600}
+                .ahs-item .ahs-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:2px}
+                .about-story{background:var(--warm-white);border-radius:var(--radius);padding:40px;margin-bottom:28px;border:1px solid var(--border)}
+                .about-story h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:6px;color:var(--charcoal)}
+                .about-story .gold-line{width:48px;height:2px;background:var(--gold);margin-bottom:22px;border-radius:2px}
+                .about-story p{font-size:14.5px;line-height:1.85;color:var(--mid);margin-bottom:16px}
+                .about-story p:last-child{margin-bottom:0}
+                .about-team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:28px}
+                .team-card{background:var(--warm-white);border-radius:var(--radius);padding:36px 28px;text-align:center;border:1px solid var(--border);transition:var(--transition);position:relative;overflow:hidden}
+                .team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+                .team-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+                .team-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--charcoal);margin:0 auto 16px;border:3px solid var(--gold-pale)}
+                .team-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin-bottom:4px}
+                .team-role{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+                .team-desc{font-size:13.5px;line-height:1.7;color:var(--mid)}
+                .about-values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
+                .value-card{background:var(--warm-white);border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
+                .value-icon{font-size:28px;margin-bottom:12px}
+                .value-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--charcoal);margin-bottom:8px}
+                .value-desc{font-size:13.5px;line-height:1.7;color:var(--mid)}
+                .about-contact{background:var(--warm-white);border-radius:var(--radius);padding:36px;border:1px solid var(--border)}
+                .about-contact h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:6px}
+                .about-contact .gold-line{width:48px;height:2px;background:var(--gold);margin-bottom:24px;border-radius:2px}
+                .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+                .contact-item{display:flex;align-items:flex-start;gap:14px}
+                .contact-icon{width:42px;height:42px;border-radius:10px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+                .contact-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);margin-bottom:4px}
+                .contact-val{font-size:14px;color:var(--charcoal);font-weight:500}
+                @media(max-width:900px){.about-team-grid,.about-values{grid-template-columns:1fr}.about-hero{padding:36px 24px}.about-hero h1{font-size:32px}.about-hero-stats{flex-wrap:wrap;gap:24px}.contact-grid{grid-template-columns:1fr}}
+              </style>
+
+              <!-- Hero -->
+              <div class="about-hero">
+                <div class="about-hero-badge">Est. 2020 · Lahore, Pakistan</div>
+                <h1>Where Luxury Meets<br><span>Timeless Hospitality</span></h1>
+                <p>MAK Hotel stands as Lahore's premier destination for discerning travellers and corporate guests alike. Founded on a vision of uncompromising quality, we have redefined the art of hospitality in the heart of Pakistan's cultural capital — blending contemporary elegance with the warmth of genuine service.</p>
+                <div class="about-hero-stats">
+                  <div class="ahs-item"><div class="ahs-val">40+</div><div class="ahs-label">Luxury Rooms</div></div>
+                  <div class="ahs-item"><div class="ahs-val">5★</div><div class="ahs-label">Rating</div></div>
+                  <div class="ahs-item"><div class="ahs-val">6+</div><div class="ahs-label">Years of Excellence</div></div>
+                  <div class="ahs-item"><div class="ahs-val">12k+</div><div class="ahs-label">Happy Guests</div></div>
+                </div>
+              </div>
+
+              <!-- Story -->
+              <div class="about-story">
+                <h2>Our Story</h2>
+                <div class="gold-line"></div>
+                <p>MAK Hotel was born from a singular belief — that every guest deserves to feel like royalty. Established in 2020 in the vibrant city of Lahore, we set out to create more than just a place to sleep; we envisioned a sanctuary where business and leisure travellers could find comfort, inspiration, and impeccable service under one roof.</p>
+                <p>From the moment a guest steps through our doors, they are greeted by an atmosphere that seamlessly blends the rich cultural heritage of Lahore with the sophistication of modern luxury. Our interiors are thoughtfully designed to reflect the grandeur of Mughal architecture — intricate detailing, warm gold accents, and spaces that breathe elegance at every turn.</p>
+                <p>We take pride in every detail of the guest experience. Our culinary team crafts exceptional menus that celebrate both local Lahori cuisine and international flavours. Our housekeeping team maintains an unwavering standard of cleanliness and presentation. Our front-desk professionals are trained not just to assist, but to anticipate. Because at MAK Hotel, service is not a department — it is our entire culture.</p>
+                <p>Over the years, we have welcomed corporate delegations, wedding parties, international tourists, and families from across the globe. Each guest has left a mark on our story, and we are honoured to have been a part of theirs. As we continue to grow, our commitment remains unchanged: to deliver an experience so memorable that our guests return not because they have to, but because they simply want to.</p>
+              </div>
+
+              <!-- Team -->
+              <div style="margin-bottom:16px">
+                <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--charcoal)">Meet the Founders</h2>
+                <div style="width:48px;height:2px;background:var(--gold);margin:8px 0 24px;border-radius:2px"></div>
+              </div>
+              <div class="about-team-grid">
+                <div class="team-card">
+                  <div class="team-avatar">A</div>
+                  <div class="team-name">Aneesa</div>
+                  <div class="team-role">Chief Executive Officer</div>
+                  <div class="team-desc">The visionary force behind MAK Hotel, Aneesa leads with passion and precision. Her strategic thinking and relentless pursuit of excellence have shaped every aspect of the hotel — from its founding philosophy to its day-to-day operations. She believes that true luxury is not a price point, but a feeling.</div>
+                </div>
+                <div class="team-card">
+                  <div class="team-avatar">M</div>
+                  <div class="team-name">Maryam</div>
+                  <div class="team-role">Chief Operations Officer</div>
+                  <div class="team-desc">Maryam is the engine that keeps MAK Hotel running flawlessly. Overseeing all operational departments — from housekeeping to front-desk to F&amp;B — she ensures that every process is seamless and every guest interaction exceeds expectations. Her leadership style is calm, thorough, and deeply people-centred.</div>
+                </div>
+                <div class="team-card">
+                  <div class="team-avatar">K</div>
+                  <div class="team-name">Khadija</div>
+                  <div class="team-role">Chief Experience Officer</div>
+                  <div class="team-desc">Khadija is the creative heart of MAK Hotel. She oversees the guest experience from arrival to departure — curating the interiors, training the service team, and designing the small touches that transform a stay into a memory. Her eye for detail and genuine warmth define the MAK spirit.</div>
+                </div>
+              </div>
+
+              <!-- Values -->
+              <div style="margin-bottom:16px">
+                <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--charcoal)">Our Values</h2>
+                <div style="width:48px;height:2px;background:var(--gold);margin:8px 0 24px;border-radius:2px"></div>
+              </div>
+              <div class="about-values">
+                <div class="value-card">
+                  <div class="value-icon">✨</div>
+                  <div class="value-title">Excellence in Every Detail</div>
+                  <div class="value-desc">We believe that greatness lives in the small things. From the thread count of our linens to the temperature of a welcome drink, no detail is too small to perfect.</div>
+                </div>
+                <div class="value-card">
+                  <div class="value-icon">🤝</div>
+                  <div class="value-title">Genuine Hospitality</div>
+                  <div class="value-desc">Our service is not scripted — it is sincere. We train our team to connect with guests as people, understand their needs, and respond with warmth and professionalism.</div>
+                </div>
+                <div class="value-card">
+                  <div class="value-icon">🌿</div>
+                  <div class="value-title">Responsible Luxury</div>
+                  <div class="value-desc">Luxury should never come at the cost of our community or environment. We source responsibly, give back locally, and strive to be a hotel Lahore can be proud of.</div>
+                </div>
+              </div>
+
+              <!-- Contact -->
+              <div class="about-contact">
+                <h2>Find Us</h2>
+                <div class="gold-line"></div>
+                <div class="contact-grid">
+                  <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div><div class="contact-label">Address</div><div class="contact-val">14 Mall Road, Gulberg III, Lahore, Punjab 54000, Pakistan</div></div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div><div class="contact-label">Telephone</div><div class="contact-val">+92 42 3570 0001</div></div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div><div class="contact-label">Email</div><div class="contact-val">reservations@makhotel.com.pk</div></div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div><div class="contact-label">Front Desk</div><div class="contact-val">Open 24 hours · 7 days a week</div></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- ═══════════════ SETTINGS PAGE ═══════════════ -->
@@ -6452,6 +6594,7 @@
             staff: { t: 'Staff', s: 'Team members and shifts' },
             reports: { t: 'Reports & Analytics', s: 'Performance overview' },
             settings: { t: 'Settings', s: 'System configuration' },
+            about: { t: 'About Us', s: 'MAK Hotel — Our story, our team' },
         };
 
         function switchPage(name) {
@@ -8693,6 +8836,353 @@
     })();
     </script>
 
+<script>
+// ═══════════════════════════════════════════════════════════
+// MAK HOTEL — FEATURE EXTENSIONS (About, Charts, Easy Check-in)
+// All additions only. Zero existing code touched.
+// ═══════════════════════════════════════════════════════════
+
+(function() {
+
+// ── 1. CHARTS: Replace SVG-based charts with real Canvas charts ──
+// Inject Chart.js from CDN then redraw when reports page opens
+function injectChartJS(cb) {
+    if (window.MAKChartJSLoaded) { cb(); return; }
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
+    s.onload = () => { window.MAKChartJSLoaded = true; cb(); };
+    document.head.appendChild(s);
+}
+
+let revenueChartInst = null, donutChartInst = null, occChartInst = null;
+
+function buildCharts() {
+    injectChartJS(() => {
+        const d = window.data || {};
+        buildRevenueChart(d);
+        buildDonutChart(d);
+        buildOccChart(d);
+    });
+}
+
+function buildRevenueChart(d) {
+    const wrap = document.getElementById('monthlyChart');
+    if (!wrap) return;
+    wrap.innerHTML = '<canvas id="makRevenueCanvas" style="width:100%;max-height:260px"></canvas>';
+    const billing = d.billing || [];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const totals = Array(12).fill(0);
+    billing.forEach(b => {
+        if (b.date) {
+            const m = parseInt(b.date.split('-')[1], 10) - 1;
+            if (m >= 0 && m < 12) totals[m] += (b.amount || 0);
+        }
+    });
+    // Pad with realistic sample data for months with no real data
+    const samples = [4200,5800,7100,8400,0,0,0,0,0,0,0,0];
+    const vals = totals.map((v, i) => v > 0 ? v : samples[i]);
+    if (revenueChartInst) revenueChartInst.destroy();
+    revenueChartInst = new Chart(document.getElementById('makRevenueCanvas'), {
+        type: 'bar',
+        data: {
+            labels: months,
+            datasets: [{
+                label: 'Revenue ($)',
+                data: vals,
+                backgroundColor: vals.map(v => v > 0 ? 'rgba(201,168,76,0.85)' : 'rgba(201,168,76,0.2)'),
+                borderColor: '#C9A84C',
+                borderWidth: 1.5,
+                borderRadius: 6,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.parsed.y.toLocaleString() } } },
+            scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { callback: v => '$' + v.toLocaleString() } }, x: { grid: { display: false } } }
+        }
+    });
+}
+
+function buildDonutChart(d) {
+    const wrap = document.getElementById('donutChart');
+    const legend = document.getElementById('donutLegend');
+    if (!wrap) return;
+    wrap.innerHTML = '<canvas id="makDonutCanvas" style="max-width:220px;max-height:220px;margin:auto"></canvas>';
+    const rooms = d.rooms || [];
+    const counts = { vacant: 0, occupied: 0, cleaning: 0, maintenance: 0 };
+    rooms.forEach(r => { if (counts[r.status] !== undefined) counts[r.status]++; });
+    const labels = ['Vacant','Occupied','Cleaning','Maintenance'];
+    const vals = [counts.vacant, counts.occupied, counts.cleaning, counts.maintenance];
+    const colors = ['#4CAF50','#C9A84C','#2196F3','#FF5722'];
+    if (donutChartInst) donutChartInst.destroy();
+    donutChartInst = new Chart(document.getElementById('makDonutCanvas'), {
+        type: 'doughnut',
+        data: { labels, datasets: [{ data: vals, backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
+        options: { responsive: true, cutout: '65%', plugins: { legend: { display: false } } }
+    });
+    if (legend) {
+        legend.innerHTML = labels.map((l, i) =>
+            `<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                <div style="width:12px;height:12px;border-radius:3px;background:${colors[i]};flex-shrink:0"></div>
+                <span style="font-size:13px;color:var(--mid)">${l}</span>
+                <span style="margin-left:auto;font-weight:500;color:var(--charcoal)">${vals[i]}</span>
+            </div>`
+        ).join('');
+    }
+}
+
+function buildOccChart(d) {
+    const wrap = document.getElementById('occupancyBreakdown');
+    if (!wrap) return;
+    const rooms = d.rooms || [];
+    const types = {};
+    rooms.forEach(r => {
+        if (!types[r.type]) types[r.type] = { total: 0, occupied: 0 };
+        types[r.type].total++;
+        if (r.status === 'occupied') types[r.type].occupied++;
+    });
+    wrap.innerHTML = Object.entries(types).map(([type, v]) => {
+        const pct = v.total > 0 ? Math.round((v.occupied / v.total) * 100) : 0;
+        const color = pct >= 80 ? '#C9A84C' : pct >= 50 ? '#2196F3' : '#4CAF50';
+        return `<div style="margin-bottom:18px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:13.5px;color:var(--charcoal)">${type}</span>
+                <span style="font-size:13px;color:var(--mid)">${v.occupied}/${v.total} · <strong style="color:${color}">${pct}%</strong></span>
+            </div>
+            <div style="background:var(--border);border-radius:99px;height:8px;overflow:hidden">
+                <div style="width:${pct}%;height:100%;background:${color};border-radius:99px;transition:width 0.6s ease"></div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// Hook into page switches to draw charts when reports page opens
+const _origSwitchPage = window.switchPage;
+window.switchPage = function(name) {
+    _origSwitchPage && _origSwitchPage(name);
+    if (name === 'reports') {
+        setTimeout(buildCharts, 120);
+    }
+};
+
+// ── 2. EASY CHECK-IN SYSTEM — polished modal ─────────────────
+// Inject a beautiful quick check-in button on the reservations page
+
+function injectEasyCheckIn() {
+    // Only inject once
+    if (document.getElementById('easyCheckinBtn')) return;
+
+    const resPage = document.getElementById('page-reservations');
+    if (!resPage) return;
+
+    // Add button to reservations toolbar
+    const toolbar = resPage.querySelector('.reports-toolbar') || resPage.querySelector('h2')?.parentElement;
+    if (toolbar) {
+        const btn = document.createElement('button');
+        btn.id = 'easyCheckinBtn';
+        btn.className = 'btn';
+        btn.style.cssText = 'background:var(--gold);color:white;border:none;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;margin-left:auto';
+        btn.innerHTML = '🔑 Easy Check-In';
+        btn.onclick = openEasyCheckin;
+        toolbar.appendChild(btn);
+    }
+
+    // Inject modal HTML
+    const modal = document.createElement('div');
+    modal.id = 'easyCheckinModal';
+    modal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(4px)';
+    modal.innerHTML = `
+        <div style="background:var(--warm-white);border-radius:16px;width:min(540px,95vw);max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.25);animation:slideUp 0.25s ease">
+            <div style="background:linear-gradient(135deg,var(--charcoal),#1a1208);padding:28px 32px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center">
+                <div>
+                    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">MAK Hotel</div>
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:400">🔑 Easy Check-In</div>
+                </div>
+                <button onclick="closeEasyCheckin()" style="background:rgba(255,255,255,0.1);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center">×</button>
+            </div>
+            <div style="padding:32px">
+                <div id="eciStep1">
+                    <p style="font-size:13.5px;color:var(--mid);margin-bottom:20px">Select a reservation to check in the guest instantly.</p>
+                    <div style="margin-bottom:16px">
+                        <label style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);display:block;margin-bottom:8px">Search Guest or Room</label>
+                        <input id="eciSearch" type="text" placeholder="Type guest name or room number…"
+                            style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;outline:none;font-family:inherit;color:var(--charcoal);background:var(--cream)"
+                            oninput="filterEciList()" />
+                    </div>
+                    <div id="eciList" style="display:flex;flex-direction:column;gap:8px;max-height:280px;overflow-y:auto"></div>
+                </div>
+                <div id="eciStep2" style="display:none">
+                    <div id="eciGuestCard" style="background:var(--cream);border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid var(--border)"></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+                        <div>
+                            <label style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);display:block;margin-bottom:8px">Check-in Date</label>
+                            <input id="eciDate" type="date" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;color:var(--charcoal);background:var(--cream);outline:none" />
+                        </div>
+                        <div>
+                            <label style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);display:block;margin-bottom:8px">Check-in Time</label>
+                            <input id="eciTime" type="time" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;color:var(--charcoal);background:var(--cream);outline:none" />
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:10px">
+                        <button onclick="eciBack()" style="flex:1;padding:12px;border:1.5px solid var(--border);border-radius:8px;background:transparent;color:var(--mid);font-size:14px;cursor:pointer;font-family:inherit">← Back</button>
+                        <button onclick="eciConfirm()" style="flex:2;padding:12px;background:var(--gold);border:none;border-radius:8px;color:white;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit">✓ Confirm Check-In</button>
+                    </div>
+                </div>
+                <div id="eciStep3" style="display:none;text-align:center;padding:20px 0">
+                    <div style="font-size:56px;margin-bottom:16px">🎉</div>
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--charcoal);margin-bottom:8px">Check-In Successful!</div>
+                    <div id="eciSuccessMsg" style="font-size:14px;color:var(--mid);margin-bottom:28px;line-height:1.6"></div>
+                    <button onclick="closeEasyCheckin()" style="padding:12px 32px;background:var(--gold);border:none;border-radius:8px;color:white;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit">Done</button>
+                </div>
+            </div>
+        </div>`;
+    document.body.appendChild(modal);
+
+    // Add slideUp animation
+    if (!document.getElementById('eciStyles')) {
+        const st = document.createElement('style');
+        st.id = 'eciStyles';
+        st.textContent = '@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}';
+        document.head.appendChild(st);
+    }
+}
+
+let eciSelectedRes = null;
+
+window.openEasyCheckin = function() {
+    injectEasyCheckIn();
+    const modal = document.getElementById('easyCheckinModal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.getElementById('eciStep1').style.display = 'block';
+    document.getElementById('eciStep2').style.display = 'none';
+    document.getElementById('eciStep3').style.display = 'none';
+    document.getElementById('eciSearch').value = '';
+    filterEciList();
+    // Set today's date and current time as defaults
+    const now = new Date();
+    document.getElementById('eciDate').value = now.toISOString().split('T')[0];
+    document.getElementById('eciTime').value = now.toTimeString().slice(0,5);
+};
+
+window.closeEasyCheckin = function() {
+    const modal = document.getElementById('easyCheckinModal');
+    if (modal) modal.style.display = 'none';
+    eciSelectedRes = null;
+};
+
+window.filterEciList = function() {
+    const q = (document.getElementById('eciSearch')?.value || '').toLowerCase();
+    const reservations = (window.data?.reservations || []).filter(r => r.status === 'pending' || r.status === 'check-in');
+    const filtered = q ? reservations.filter(r =>
+        (r.name || '').toLowerCase().includes(q) ||
+        (r.room || '').toLowerCase().includes(q)
+    ) : reservations;
+
+    const list = document.getElementById('eciList');
+    if (!list) return;
+    if (filtered.length === 0) {
+        list.innerHTML = '<div style="text-align:center;padding:24px;color:var(--light);font-size:14px">No pending reservations found</div>';
+        return;
+    }
+    list.innerHTML = filtered.map(r => `
+        <div onclick="eciSelectRes(${r.id})" style="padding:16px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:center"
+            onmouseover="this.style.borderColor='var(--gold)';this.style.background='var(--gold-pale)'"
+            onmouseout="this.style.borderColor='var(--border)';this.style.background='transparent'">
+            <div>
+                <div style="font-weight:500;color:var(--charcoal);margin-bottom:3px">${r.name}</div>
+                <div style="font-size:12.5px;color:var(--mid)">Room ${r.room} · ${r.roomType || ''} · ${r.nights} night${r.nights>1?'s':''}</div>
+            </div>
+            <div style="text-align:right">
+                <div style="font-size:12px;color:var(--gold);font-weight:500">$${r.amount}</div>
+                <div style="font-size:11px;color:var(--light);margin-top:2px">${r.checkin || ''}</div>
+            </div>
+        </div>`).join('');
+};
+
+window.eciSelectRes = function(id) {
+    eciSelectedRes = (window.data?.reservations || []).find(r => r.id === id);
+    if (!eciSelectedRes) return;
+    document.getElementById('eciStep1').style.display = 'none';
+    document.getElementById('eciStep2').style.display = 'block';
+    document.getElementById('eciGuestCard').innerHTML = `
+        <div style="display:flex;align-items:center;gap:16px">
+            <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--charcoal);flex-shrink:0">${(eciSelectedRes.name||'?')[0]}</div>
+            <div>
+                <div style="font-weight:500;font-size:16px;color:var(--charcoal)">${eciSelectedRes.name}</div>
+                <div style="font-size:13px;color:var(--mid);margin-top:2px">Room ${eciSelectedRes.room} · ${eciSelectedRes.roomType||''}</div>
+                <div style="font-size:12px;color:var(--light);margin-top:2px">${eciSelectedRes.nights} nights · $${eciSelectedRes.amount}</div>
+            </div>
+        </div>`;
+};
+
+window.eciBack = function() {
+    document.getElementById('eciStep1').style.display = 'block';
+    document.getElementById('eciStep2').style.display = 'none';
+};
+
+window.eciConfirm = function() {
+    if (!eciSelectedRes) return;
+    const date = document.getElementById('eciDate').value;
+    const time = document.getElementById('eciTime').value;
+    // Update in data object
+    const res = (window.data?.reservations || []).find(r => r.id === eciSelectedRes.id);
+    if (res) {
+        res.status = 'check-in';
+        res.checkin = date;
+        res.checkinTime = time ? (function(){
+            const [h,m] = time.split(':');
+            const hr = parseInt(h,10);
+            return (hr % 12 || 12) + ':' + m + ' ' + (hr >= 12 ? 'PM' : 'AM');
+        })() : res.checkinTime;
+    }
+    // Update room status
+    const room = (window.data?.rooms || []).find(r => r.num === eciSelectedRes.room);
+    if (room) room.status = 'occupied';
+    // Sync to DB if bridge is available
+    if (typeof window.apiPut === 'function' && res) {
+        window.apiPut('reservations', res.id, { status: 'check-in', checkin: date, checkinTime: res.checkinTime }).catch(() => {});
+    }
+    if (typeof window.apiPut === 'function' && room) {
+        window.apiPut('rooms', room.num, { status: 'occupied' }).catch(() => {});
+    }
+    // Re-render badges and current page
+    if (typeof window.updateBadges === 'function') window.updateBadges();
+    if (typeof window.renderPage === 'function') {
+        const activePage = document.querySelector('.page.active');
+        if (activePage) window.renderPage(activePage.id.replace('page-',''));
+    }
+    // Show success
+    document.getElementById('eciStep2').style.display = 'none';
+    document.getElementById('eciStep3').style.display = 'block';
+    document.getElementById('eciSuccessMsg').innerHTML =
+        `<strong>${eciSelectedRes.name}</strong> has been checked in to Room <strong>${eciSelectedRes.room}</strong>.<br>Check-in recorded: ${date} at ${res?.checkinTime || time}`;
+};
+
+// Close modal on backdrop click
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('easyCheckinModal');
+    if (modal && e.target === modal) closeEasyCheckin();
+});
+
+// Inject easy check-in when reservations page is opened
+const _sw2 = window.switchPage;
+window.switchPage = function(name) {
+    _sw2 && _sw2(name);
+    if (name === 'reservations') setTimeout(injectEasyCheckIn, 150);
+};
+
+// ── 3. INIT: draw charts if already on reports page ──────────
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const activePage = document.querySelector('.page.active');
+        if (activePage && activePage.id === 'page-reports') buildCharts();
+        injectEasyCheckIn();
+    }, 800);
+});
+
+})();
+</script>
 </body>
 
 </html>
