@@ -142,7 +142,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // ── Fallback → serve hotel1.html ─────────────────────────────
-app.get('*', (req, res) => {
+app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/hotel1.html'));
 });
 
